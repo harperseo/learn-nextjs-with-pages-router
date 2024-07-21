@@ -2,12 +2,11 @@ import React from 'react';
 import axios from 'axios';
 import ProductList from '@/components/ProductList';
 import ProduchHeader from '@/components/ProduchHeader';
+import { fetchProducts } from '@/api';
 
 export async function getServerSideProps() {
   try {
-    const res = await axios.get('http://localhost:4000/products');
-    console.log('## API response:', res.data);
-
+    const res = await fetchProducts();
     return {
       props: { productInfo: res.data },
     };
