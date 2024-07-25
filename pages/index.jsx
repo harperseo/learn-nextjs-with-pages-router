@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import ProductList from '@/components/ProductList';
-import ProduchHeader from '@/components/ProduchHeader';
+import ProductHeader from '@/components/ProductHeader';
 import { fetchProducts } from '@/api';
 
 export async function getServerSideProps() {
@@ -22,7 +22,7 @@ export default function ProductPage({ productInfo }) {
   console.log('## productInfo response:', productInfo);
   return (
     <div>
-      <ProduchHeader title="list" />
+      <ProductHeader title="list" />
       <ProductList productInfo={productInfo} />
     </div>
   );

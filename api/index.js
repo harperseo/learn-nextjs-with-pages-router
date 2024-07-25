@@ -10,4 +10,13 @@ function fetchProductById(id) {
   return instance.get(`products/${id}`);
 }
 
-export { fetchProducts, fetchProductById };
+function createCartItem({ id, name, price, imageUrl }) {
+  return instance.post('/carts', {
+    id,
+    name,
+    price,
+    imageUrl,
+  });
+}
+
+export { fetchProducts, fetchProductById, createCartItem };

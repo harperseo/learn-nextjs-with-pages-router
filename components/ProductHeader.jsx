@@ -1,5 +1,5 @@
 import React from 'react';
 
-export default function ProduchHeader(props) {
+export default function ProductHeader(props) {
   return <div>{props.title}</div>;
 }

@@ -1,29 +1,23 @@
-import ProduchHeader from '@/components/ProduchHeader';
+import ProductHeader from '@/components/ProductHeader';
 import axios from 'axios';
 import Image from 'next/image';
 import React from 'react';
 import { fetchProductById } from '@/api';
+import ProductInfo from '@/components/ProductInfo';
 
-export default function ProductDetailPage({ msg, productInfo }) {
+export default function ProductDetailPage({ productInfo }) {
   return (
     <div>
-      <ProduchHeader title="detail"></ProduchHeader>
-      <div>ProductDetailPages:{msg}</div>
-      <p>{productInfo.name}</p>
-      <Image
-        alt="img"
-        src={productInfo.imageUrl}
-        width={300}
-        height={250}
-      ></Image>
+      <ProductHeader title="detail"></ProductHeader>
+      <ProductInfo productDetail={productInfo}></ProductInfo>
     </div>
   );
 }
 
 export async function getServerSideProps(context) {
   const id = context.params.id;
-  const res = await fetchProductById(id);
+  const { data } = await fetchProductById(id);
   return {
-    props: { msg: context.params.id, productInfo: res.data },
+    props: { productInfo: data },
   };
 }
