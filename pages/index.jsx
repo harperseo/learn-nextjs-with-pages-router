@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import ProductList from '@/components/ProductList';
+import ProductList from '@/components/product-list/ProductList';
 import ProductHeader from '@/components/ProductHeader';
 import { fetchProducts } from '@/api';
 

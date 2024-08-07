@@ -3,7 +3,7 @@ import axios from 'axios';
 import Image from 'next/image';
 import React from 'react';
 import { fetchProductById } from '@/api';
-import ProductInfo from '@/components/ProductInfo';
+import ProductInfo from '@/components/product-detail/ProductInfo';
 
 export default function ProductDetailPage({ productInfo }) {
   return (

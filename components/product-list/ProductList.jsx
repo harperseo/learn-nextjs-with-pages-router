@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import styles from '@/components/ProductList.module.css';
+import styles from '@/components/product-list/ProductList.module.css';
 import Link from 'next/link';
 
 export default function ProductList({ productInfo }) {
