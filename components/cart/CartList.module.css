@@ -1,0 +1,7 @@
+.item {
+  display: flex;
+  margin-bottom: 10px;
+}
+.description {
+  margin-left: 30px;
+}

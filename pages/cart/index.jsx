@@ -7,13 +7,8 @@ function CartPage({ carts }) {
   console.log(carts);
   return (
     <div>
-      CartPage
-      {carts &&
-        carts.map(c => {
-          return <p key={c.id}>{c.name}</p>;
-        })}
       <CartHeader></CartHeader>
-      <CartList></CartList>
+      <CartList carts={carts}></CartList>
     </div>
   );
 }
