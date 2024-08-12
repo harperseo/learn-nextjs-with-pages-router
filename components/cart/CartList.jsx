@@ -1,18 +1,19 @@
 import Image from 'next/image';
 import React from 'react';
 import styles from './CartList.module.css';
-import { deleteCartItem } from '@/api';
 import Router from 'next/router';
+import axios from 'axios';
 
 export default function CartList({ carts }) {
   const totalPrice = carts.reduce((acc, cur) => {
     return acc + Number(cur.price);
   }, 0);
   const removeItem = async id => {
-    const res = await deleteCartItem(id);
-    if (res) {
-      Router.replace(Router.asPath);
-    }
+    const { data } = await axios.post('http://localhost:3000/api/carts', {
+      id: id,
+    });
+    alert(data);
+    Router.replace(Router.asPath);
   };
   return (
     <div>
